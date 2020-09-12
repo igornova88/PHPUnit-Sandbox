@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":238:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:4:{s:31:"TDD\Test\ReceiptTest::testTotal";d:0.017;s:29:"TDD\Test\ReceiptTest::testTax";d:0;s:40:"TDD\Test\ReceiptTest::testTotalAndCoupon";d:0;s:38:"TDD\Test\ReceiptTest::testPostTaxTotal";d:0.023;}}}
