@@ -24,17 +24,6 @@ class ReceiptTest extends TestCase {
 		);
 	}
 
-	public function testTotalAndCoupon() {
-		$input = [0,2,5,8];
-		$coupon = 0.20;				# ovde ima efekat na test, pa zato ima i vrednost
-		$output = $this->Receipt->total($input, $coupon);
-		$this->assertEquals(
-			12,
-			$output,
-			'When summing the total should equal 12'
-		);
-	}
-
 	public function testTax() {
 		$inputAmount = 10.00;
 		$taxInput = 0.10;
@@ -43,6 +32,17 @@ class ReceiptTest extends TestCase {
 			1.00,
 			$output,
 			'The tax calculation should equal 1.00'
+		);
+	}
+
+	public function testTotalAndCoupon() {
+		$input = [0,2,5,8];
+		$coupon = 0.20;				# ovde ima efekat na test, pa zato ima i vrednost
+		$output = $this->Receipt->total($input, $coupon);
+		$this->assertEquals(
+			12,
+			$output,
+			'When summing the total should equal 12'
 		);
 	}
 	
