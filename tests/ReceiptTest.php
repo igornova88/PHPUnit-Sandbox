@@ -97,8 +97,16 @@ class ReceiptTest extends TestCase {
 	public function provideTotal() {
 		return [
 			[[1,2,5,8], 16],
-			[[-1,2,5,8], 14],
+			[[-1,2,5,8], 13],
 			[[1,2,8], 11],
+		];
+	}
+	
+	public function provideTotalWithAssocNames() {
+		return [
+			'ints totaling 16' => [[1,2,5,8], 16],
+			'ints totaling 14' => [[-1,2,5,8], 14],
+			'ints totaling 11' => [[1,2,8], 11],
 		];
 	}
 }
