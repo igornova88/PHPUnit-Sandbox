@@ -80,4 +80,25 @@ class ReceiptTest extends TestCase {
 		$result = $Receipt->postTaxTotal([1,2,5,8], 0.20, null);
 		$this->assertEquals(11.00, $result);
 	}
+	
+	/**
+	 * @dataProvider provideTotal
+	 */
+	public function testTotalWithDataProvider($items, $expected) {
+		$coupon = null;
+		$output = $this->Receipt->total($items, $coupon);
+		$this->assertEquals(
+			$expected,
+			$output,
+			"When summing the total should equal {$expected}"
+		);
+	}
+	
+	public function provideTotal() {
+		return [
+			[[1,2,5,8], 16],
+			[[-1,2,5,8], 14],
+			[[1,2,8], 11],
+		];
+	}
 }
