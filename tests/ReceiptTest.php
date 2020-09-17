@@ -97,7 +97,7 @@ class ReceiptTest extends TestCase {
 	public function provideTotal() {
 		return [
 			[[1,2,5,8], 16],
-			[[-1,2,5,8], 13],
+			[[-1,2,5,8], 14],
 			[[1,2,8], 11],
 		];
 	}
@@ -109,4 +109,12 @@ class ReceiptTest extends TestCase {
 			'ints totaling 11' => [[1,2,8], 11],
 		];
 	}
+
+	public function testTotalException() {
+        $input = [0,2,5,8];
+        $coupon = 1.20;
+        $this->expectException('BadMethodCallException');
+        $this->Receipt->total($input, $coupon);
+    }    
+
 }
